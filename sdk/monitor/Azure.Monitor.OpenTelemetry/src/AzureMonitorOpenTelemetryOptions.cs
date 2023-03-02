@@ -74,12 +74,6 @@ namespace Azure.Monitor.OpenTelemetry
             return this;
         }
 
-        internal void SetValueToExporterOptions(IServiceProvider sp)
-        {
-            var exporterOptions = sp.GetRequiredService<IOptionsMonitor<AzureMonitorExporterOptions>>().Get("");
-            SetValueToExporterOptions(exporterOptions);
-        }
-
         internal void SetValueToExporterOptions(AzureMonitorExporterOptions exporterOptions)
         {
             exporterOptions.ConnectionString = ConnectionString;
